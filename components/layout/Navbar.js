@@ -3,7 +3,7 @@ import { Navbar, Nav } from "react-bootstrap"
 export default function BlogNavbar() {
 
     return (
-      <Navbar className="fj-navbar fj-nav-base" bg="transparent" expand="lg">
+      <Navbar className="fj-navbar fj-nav-base" bg="light" expand="lg" sticky="top">
         <Navbar.Brand className="fj-navbar-brand">
                     <Nav.Link className="fj-navbar-item fj-navbar-link" href="/">
               Adithyas Blog
