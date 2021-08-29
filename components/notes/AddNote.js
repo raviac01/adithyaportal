@@ -31,6 +31,16 @@ export default function AddNote({ handleAddNote }) {
 
   return (
     <div className={classes.notenew}>
+      <div>
+      <select           name="status"
+          id="status"
+          className={classes.save}
+          onChange={handleStatusChange}
+        >
+          <option value="Active">Active</option>
+          <option value="Complete">Complete</option>
+        </select>
+    </div>  
       <textarea
         rows="8"
         cols="30"
@@ -51,14 +61,7 @@ export default function AddNote({ handleAddNote }) {
           <option value="Math">Math</option>
           <option value="General">General</option>
         </select>
-        <select           name="status"
-          id="status"
-          className={classes.save}
-          onChange={handleStatusChange}
-        >
-          <option value="Active">Active</option>
-          <option value="Complete">Complete</option>
-        </select>
+
         <button className={classes.save} onClick={handleSaveClick}>
           Save
         </button>

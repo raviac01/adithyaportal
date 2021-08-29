@@ -2,22 +2,17 @@ import { MdDeleteForever } from "react-icons/md";
 import classes from "./notes.module.css";
 
 export default function Note({ note, handleDeleteNote, handleStatusChange }) {
-  
-    function handleDeleteClick() {
+  function handleDeleteClick() {
     handleDeleteNote(note.id);
   }
 
   function handleStatusChangeEvent(event) {
-      console.log('passing status ', event.target.value)
-     handleStatusChange(note.id, event.target.value)
+    handleStatusChange(note.id, event.target.value);
   }
 
   return (
     <div className={classes.note}>
-      <span> {note.text} </span>
-      <div className={classes.notefooter}>
-        <small>{note.date}</small>
-        <small> {note.subject} </small>
+      <div>
         <select
           name="status"
           id="status"
@@ -28,6 +23,12 @@ export default function Note({ note, handleDeleteNote, handleStatusChange }) {
           <option value="Active">Active</option>
           <option value="Complete">Complete</option>
         </select>
+      </div>
+      <span> {note.text} </span>
+      <div className={classes.notefooter}>
+        <small>{note.date}</small>
+        <small> {note.subject} </small>
+
         <MdDeleteForever
           onClick={handleDeleteClick}
           className={classes.deleteicon}

@@ -7,8 +7,8 @@ import classes from './notes.module.css'
 
 export default function NotesHome({paramSubject=''}) {
   const [notes, setNotes] = useState([]);
-
   const [searchText, setSearchText] = useState("");
+  const [searchStatus, setSearchStatus] = useState("");
 
   useEffect(() => {
     getNotesDB().then((result) => {
@@ -49,15 +49,25 @@ export default function NotesHome({paramSubject=''}) {
     setNotes(newNotes);
   };
 
+  function handleSearchStatusChange(searchStatus) {
+      setSearchStatus(searchStatus)
+  }
+
   return (
     <div className={classes.noteshomecontainer}>
       <Sidebar />
       <NotesList
-        notes={notes.filter((note) => note.subject.includes(paramSubject)).filter((note) => note.text.includes(searchText))}
+        notes={
+          notes
+          .filter((note) => note.status.includes(searchStatus))
+          .filter((note) => note.subject.includes(paramSubject))
+          .filter((note) => note.text.includes(searchText))
+        }
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
         handleSearch={setSearchText}
         handleStatusChange={updateNoteStatus}
+        searchStatusChange={handleSearchStatusChange}
       />
     </div>
   );
