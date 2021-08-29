@@ -26,7 +26,13 @@ export default function NotesHome({paramSubject=''}) {
 
   const updateNoteStatus = (id, newstatus) => {
     updateNoteDB(id, newstatus)
+    let updateNote = notes.find( note => note.id == id)
     
+    const newNotes = notes.filter((note) => note.id != id);
+    let updatedNote = {...updateNote, status:newstatus}
+    //console.log("update note ", updatedNote)
+    newNotes.push(updatedNote)
+    setNotes(newNotes);
   }
 
   const addNote = (text, subject, status) => {
@@ -52,6 +58,8 @@ export default function NotesHome({paramSubject=''}) {
   function handleSearchStatusChange(searchStatus) {
       setSearchStatus(searchStatus)
   }
+
+  notes.sort((a, b) => a.status > b.status ? 0 : -1)
 
   return (
     <div className={classes.noteshomecontainer}>
