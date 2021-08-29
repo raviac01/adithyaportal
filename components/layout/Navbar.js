@@ -6,7 +6,7 @@ export default function BlogNavbar() {
       <Navbar className="fj-navbar fj-nav-base" bg="transparent" expand="lg">
         <Navbar.Brand className="fj-navbar-brand">
                     <Nav.Link className="fj-navbar-item fj-navbar-link" href="/">
-              Adithya's Blog
+              Adithyas Blog
             </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
