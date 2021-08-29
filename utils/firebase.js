@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, runTransaction } from 'firebase/firestore/lite';
 
 const config = {
   apiKey: "AIzaSyC5vtujRiTT533u_sh93eBq7IiYnP9w88A",
@@ -30,11 +30,30 @@ const getNotesDB =  async () => {
 }
 
 const deleteNoteDB = async (id) => {
-    console.log('deleting ....', id)
     if ( id ) {
         await deleteDoc(doc(db, 'notes', id))
     }
 
 }
 
-export { saveNoteDB, getNotesDB, deleteNoteDB }
+const updateNoteDB = async (id, newstatus) => {
+    if( id ) {
+        const sfDocRef = doc(db, "notes", id);
+        try {
+            await runTransaction(db, async (transaction) => {
+              const sfDoc = await transaction.get(sfDocRef);
+              if (!sfDoc.exists()) {
+                throw "Document does not exist!";
+              }
+          
+              //const newPopulation = sfDoc.data().population + 1;
+              transaction.update(sfDocRef, { status: newstatus });
+            });
+            console.log("Transaction successfully committed!");
+          } catch (e) {
+            console.log("Transaction failed: ", e);
+          }
+    }
+}
+
+export { saveNoteDB, getNotesDB, deleteNoteDB, updateNoteDB }

@@ -2,16 +2,13 @@ import NotesList from "components/notes/NotesList";
 import Sidebar from "components/ui/Sidebar";
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import { getNotesDB, saveNoteDB, deleteNoteDB } from "utils/firebase";
+import { getNotesDB, saveNoteDB, deleteNoteDB, updateNoteDB } from "utils/firebase";
 import classes from './notes.module.css'
 
 export default function NotesHome({paramSubject=''}) {
   const [notes, setNotes] = useState([]);
 
   const [searchText, setSearchText] = useState("");
-
-  console.log('passed subject is ', paramSubject)
-
 
   useEffect(() => {
     getNotesDB().then((result) => {
@@ -27,13 +24,19 @@ export default function NotesHome({paramSubject=''}) {
   //localStorage.setItem('notes-array', JSON.stringify(notes))
   //}, [notes])
 
-  const addNote = (text, subject) => {
+  const updateNoteStatus = (id, newstatus) => {
+    updateNoteDB(id, newstatus)
+    
+  }
+
+  const addNote = (text, subject, status) => {
     const date = new Date();
     const newNote = {
       id: nanoid(),
       text: text,
       subject: subject,
       date: date.toLocaleDateString(),
+      status: status
     };
     const newNotes = [...notes, newNote];
     saveNoteDB(newNote);
@@ -54,6 +57,7 @@ export default function NotesHome({paramSubject=''}) {
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
         handleSearch={setSearchText}
+        handleStatusChange={updateNoteStatus}
       />
     </div>
   );
