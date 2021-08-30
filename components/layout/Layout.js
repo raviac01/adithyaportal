@@ -3,14 +3,14 @@ import Navbar from "./Navbar";
 
 export default function Layout({ children, className }) {
   return (
-    <Container>
+    <Container fluid>
       <Navbar />
 
-      <div className={`page-wrapper ${className}`}>{children}</div>
+      <div className={`page-wrapper ${className}`} >{children}</div>
 
       <footer className="page-footer">
         <div>
-          <a href="#">Blog</a>
+          <a href="#">Jee preparation</a>
         </div>
       </footer>
     </Container>
