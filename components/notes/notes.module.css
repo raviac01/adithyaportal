@@ -3,7 +3,6 @@
 }
 
 .notescontainer {
-	max-width: 960px;
 	margin-right: auto;
 	margin-left: 200px;
 	padding-right: 5px;
@@ -37,8 +36,8 @@
 	display: grid;
 	grid-gap: 5rem;
 	grid-template-columns: repeat(
-		auto-fill,
-		minmax(250px, 1fr)
+		auto-fit,
+		minmax(220px, 1fr)
 	);
 }
 
