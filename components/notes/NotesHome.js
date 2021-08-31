@@ -14,10 +14,6 @@ export default function NotesHome({paramSubject=''}) {
     getNotesDB().then((result) => {
       if (result) setNotes(result);
     });
-    /*const savedNotes = JSON.parse(localStorage.getItem('notes-array'))
-      if( savedNotes) {
-        setNotes(savedNotes)
-      }*/
   }, []);
 
   //useEffect(() => {

@@ -15,7 +15,8 @@ const config = {
 const app = initializeApp(config);
 
 const db = getFirestore(app)
-const col = collection(db, '/notes');
+const notesCol = collection(db, '/notes');
+const postsCol = collection(db, '/posts');
 
 // Create a root reference
 const storage = getStorage();
@@ -27,7 +28,7 @@ const saveNoteDB =  async (note) => {
 }
 
 const getNotesDB =  async () => {
-    const docsSnapshot = await getDocs(col);
+    const docsSnapshot = await getDocs(notesCol);
      //docsSnapshot.docs.forEach(doc => console.log(doc.data()));
      const docsData = docsSnapshot.docs.map(doc => doc.data());
      return docsData
@@ -60,4 +61,16 @@ const updateNoteDB = async (id, newstatus) => {
     }
 }
 
-export { saveNoteDB, getNotesDB, deleteNoteDB, updateNoteDB, storage, ref, getDownloadURL}
+const savePostDB = async (newPost) => {
+    //console.log(newPost)
+    await setDoc(doc(db, 'posts', newPost.uid), newPost)
+}
+
+
+const getPostsDB =  async () => {
+  const docsSnapshot = await getDocs(postsCol);
+   const docsData = docsSnapshot.docs.map(doc => doc.data());
+   return docsData
+}
+
+export { saveNoteDB, getNotesDB, deleteNoteDB, updateNoteDB, storage, ref, getDownloadURL, savePostDB, getPostsDB}

@@ -1,4 +1,4 @@
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, NavItem, NavLink } from "react-bootstrap";
 import classes from "./blog.module.css";
 import { jeeSyllabus } from "data/data";
 
@@ -22,7 +22,7 @@ export default function BlogNavBar() {
                 key={syllabus.id}
               >
                 {syllabus.topics.map((subtopic) => (
-                  <NavDropdown.Item key={subtopic.id} id={subtopic.id} href={`/blog/${syllabus.subject}/${subtopic.id}`}>{subtopic.name}</NavDropdown.Item>
+                  <NavDropdown.Item key={subtopic.id} id={subtopic.id} href={`/blog/${syllabus.subject}/${subtopic.name}`}>{subtopic.name}</NavDropdown.Item>
                 ))}
               </NavDropdown>
             ))}

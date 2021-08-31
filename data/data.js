@@ -33,63 +33,59 @@ export const jeeSyllabus = [
     topics: [
       {
         id: 1,
-        name: "Sets, Relations and Functions",
+        name: "SetsRelationsAndFunctions",
       },
       {
         id: 2,
-        name: "Complex numbers and Quadratic Equations",
+        name: "ComplexNumbersAndQuadraticEquations",
       },
       {
         id: 3,
-        name: "Matrices and Determinants",
+        name: "MatricesAndDeterminants",
       },
       {
         id: 4,
-        name: "Permutations and Combinations",
+        name: "PermutationsAndCombinations",
       },
       {
         id: 5,
-        name: "Mathematical Induction",
+        name: "MathematicalInduction",
       },
       {
         id: 6,
-        name: "Binomial Theorem and its simple applications",
+        name: "BinomialTheorem",
       },
       {
         id: 7,
-        name: "Sequence and Series",
+        name: "SequenceAndSeries",
       },
       {
         id: 8,
-        name: "Limits, Continuity and Differentiability",
+        name: "LimitsContinuityAndDifferentiability",
       },
       {
         id: 9,
-        name: "Integral Calculus",
+        name: "IntegralCalculus",
       },
       {
         id: 10,
-        name: "Co-ordinate Geometry",
+        name: "Co-ordinateGeometry",
       },
       {
         id: 11,
-        name: "Three Dimensional Geometry",
+        name: "ThreeDimensionalGeometry",
       },
       {
         id: 12,
-        name: "Vector Algebra",
+        name: "VectorAlgebra",
       },
       {
         id: 13,
-        name: "Statistics and Probability",
+        name: "StatisticsAndProbability",
       },
       {
         id: 14,
         name: "Trigonometry",
-      },
-      {
-        id: 15,
-        name: "Vector Algebra",
       },
     ],
   },
@@ -99,7 +95,7 @@ export const jeeSyllabus = [
     topics: [
       {
         id: 1,
-        name: "Physics and Measurement",
+        name: "PhysicsAndMeasurement",
       },
       {
         id: 2,
@@ -107,15 +103,15 @@ export const jeeSyllabus = [
       },
       {
         id: 3,
-        name: "Laws Of Motion",
+        name: "LawsOfMotion",
       },
       {
         id: 4,
-        name: "Work, Energy and Power",
+        name: "WorkEnergyAndPower",
       },
       {
         id: 5,
-        name: "Rotational Motion",
+        name: "RotationalMotion",
       },
       {
         id: 6,
@@ -123,7 +119,7 @@ export const jeeSyllabus = [
       },
       {
         id: 7,
-        name: "Properties of Solids and Liquids",
+        name: "PropertiesOfSolidsAndLiquids",
       },
       {
         id: 8,
@@ -131,7 +127,7 @@ export const jeeSyllabus = [
       },
       {
         id: 9,
-        name: "Kinetic theory of gases",
+        name: "KineticTheoryOfGases",
       },
       {
         id: 10,
@@ -139,19 +135,19 @@ export const jeeSyllabus = [
       },
       {
         id: 11,
-        name: "Current Electricity",
+        name: "CurrentElectricity",
       },
       {
         id: 12,
-        name: "Magnetic effects of current and magnetism",
+        name: "MagneticEffectsOfCurrentAndMagnetism",
       },
       {
         id: 13,
-        name: "Electromagnetic induction and alternating currents",
+        name: "ElectromagneticIinductionAndAC",
       },
       {
         id: 14,
-        name: "Electromagnetic Waves",
+        name: "ElectromagneticWaves",
       },
       {
         id: 15,
@@ -159,20 +155,8 @@ export const jeeSyllabus = [
       },
       {
         id: 16,
-        name: "Dual Nature of Matter and Radiation",
-      },
-      {
-        id: 17,
-        name: "Atoms and Nuclei",
-      },
-      {
-        id: 18,
-        name: "Electronic Devices",
-      },
-      {
-        id: 19,
-        name: "Communication Systems",
-      },
+        name: "ModernPhysics",
+      }
     ],
   },
   {
@@ -181,23 +165,23 @@ export const jeeSyllabus = [
     topics: [
       {
         id: 1,
-        name: "Some basic concepts in chemistry",
+        name: "SomeBasicConceptsInChemistry",
       },
       {
         id: 2,
-        name: "States of matter",
+        name: "StatesOfMatter",
       },
       {
         id: 3,
-        name: "Atomic Structure",
+        name: "AtomicStructure",
       },
       {
         id: 4,
-        name: "Chemical bonding and molecular structure",
+        name: "ChemicalBondingAndMolecularStructure",
       },
       {
         id: 5,
-        name: "Chemical Thermodynamics",
+        name: "ChemicalThermodynamics",
       },
       {
         id: 6,
@@ -209,7 +193,7 @@ export const jeeSyllabus = [
       },
       {
         id: 8,
-        name: "Redox reactions and electrochemistry",
+        name: "Redox",
       },
       {
         id: 9,
@@ -225,60 +209,28 @@ export const jeeSyllabus = [
       },
       {
         id: 12,
-        name: "General principles and processes of isolation of metals",
-      },
-      {
-        id: 13,
         name: "Hydrogen",
       },
       {
+        id: 13,
+        name: "S,P,D,FBlocks",
+      },
+      {
         id: 14,
-        name: "S-block elements (Alkali and Alkaline Earth Metals",
+        name: "Co-ordinationCompounds",
       },
       {
         id: 15,
-        name: "P-block elements",
+        name: "Environmentalchemistry",
       },
       {
         id: 16,
-        name: "d and f block elements",
-      },
-      {
-        id: 17,
-        name: "Co-ordination compounds",
-      },
-      {
-        id: 18,
-        name: "Environmental chemistry",
-      },
-      {
-        id: 19,
         name: "Purification and characterisation of organic compounds",
       },
       {
-        id: 20,
-        name: "Some basic principles of organic chemistry",
-      },
-      {
-        id: 21,
-        name: "Hydrocarbons",
-      },
-      {
-        id: 22,
-        name: "Organic Compounds",
-      },
-      {
-        id: 23,
-        name: "Polymers and Biomolecules",
-      },      
-      {
-        id: 24,
-        name: "Chemistry in everyday life",
-      },      
-      {
-        id: 25,
-        name: "Principles related to practical chemistry",
-      },                  
-    ],
+        id: 17,
+        name: "OrganicChemistry",
+      }
+     ],
   },
 ];

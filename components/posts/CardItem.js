@@ -2,6 +2,7 @@ import { Card } from 'react-bootstrap';
 import Link from 'next/link'
 
 const CardItem = ({subject, subtopic, text, url}) => {
+  console.log(subtopic)
   return (
     <Card className={`fj-card`}>
       <div className="card-body-wrapper">
@@ -12,7 +13,7 @@ const CardItem = ({subject, subtopic, text, url}) => {
           </div>
         </Card.Header>
         <div className="view overlay">
-         <img src={url} alt='An image showing Adithya' width={200} height={200} />
+         <img src={url} alt='An image showing Adithya' width={250} height={250} />
         </div>
         <Card.Body>
           <Card.Title className="card-main-title">{subtopic}</Card.Title>
