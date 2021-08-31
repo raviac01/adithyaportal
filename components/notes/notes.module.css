@@ -36,8 +36,8 @@
 	display: grid;
 	grid-gap: 5rem;
 	grid-template-columns: repeat(
-		auto-fit,
-		minmax(220px, 1fr)
+		4,
+		minmax(250px, 1fr)
 	);
 }
 
@@ -103,8 +103,4 @@
 
 .search input:focus {
     outline: none;
-}
-
-.searchicons {
-
 }

@@ -12,7 +12,7 @@ export default function SearchNotes({ handleSearch, SearchNotes, searchStatusCha
 
   return (
     <div className={classes.search}>
-      <MdSearch className={classes.searchicons} size="1.3em" />
+      <MdSearch size="1.3em" />
       <input
         type="text"
         onChange={searchEvent}

@@ -18,8 +18,8 @@ export default function BlogNavbar() {
             <Nav.Link className="fj-navbar-item fj-navbar-link" href="/notes">
               Notes
             </Nav.Link>
-            <Nav.Link className="fj-navbar-item fj-navbar-link" href="/">
-              Reminders
+            <Nav.Link className="fj-navbar-item fj-navbar-link" href="/blog">
+              Blog
             </Nav.Link>            
           </Nav>
         </Navbar.Collapse>

@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, runTransaction } from 'firebase/firestore/lite';
+import { getStorage, ref, getDownloadURL } from "firebase/storage"
 
 const config = {
   apiKey: "AIzaSyC5vtujRiTT533u_sh93eBq7IiYnP9w88A",
@@ -15,6 +16,9 @@ const app = initializeApp(config);
 
 const db = getFirestore(app)
 const col = collection(db, '/notes');
+
+// Create a root reference
+const storage = getStorage();
 
 const saveNoteDB =  async (note) => {
     if(note) {
@@ -56,4 +60,4 @@ const updateNoteDB = async (id, newstatus) => {
     }
 }
 
-export { saveNoteDB, getNotesDB, deleteNoteDB, updateNoteDB }
+export { saveNoteDB, getNotesDB, deleteNoteDB, updateNoteDB, storage, ref, getDownloadURL}
