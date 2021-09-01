@@ -12,7 +12,7 @@ export default function NotesList({
   searchStatusChange,
 }) {
   return (
-    <Container>
+    <Container fluid>
       <SearchNotes
         handleSearch={handleSearch}
         searchStatusChange={searchStatusChange}

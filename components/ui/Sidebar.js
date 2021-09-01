@@ -2,8 +2,7 @@ import React from 'react';
 import { sidebarlinks } from 'data/data';
 import classes from './sidebar.module.css'
 import Link from 'next/link'
-import { Container } from 'react-bootstrap';
-
+// /className={classes.sidebar}
 const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
@@ -20,6 +19,7 @@ const Sidebar = () => {
         })}
       </ul>
     </div>
+
   );
 };
 

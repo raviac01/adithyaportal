@@ -60,18 +60,24 @@ export default function NotesHome({ paramSubject = "" }) {
 
   return (
     <Container fluid>
-      <Sidebar />
-      <NotesList
-        notes={notes
-          .filter((note) => note.status.includes(searchStatus))
-          .filter((note) => note.subject.includes(paramSubject))
-          .filter((note) => note.text.includes(searchText))}
-        handleAddNote={addNote}
-        handleDeleteNote={deleteNote}
-        handleSearch={setSearchText}
-        handleStatusChange={updateNoteStatus}
-        searchStatusChange={handleSearchStatusChange}
-      />
+      <div class="row">
+        <div class="col-2">
+          <Sidebar />
+        </div>
+        <div class="col-10">
+          <NotesList
+            notes={notes
+              .filter((note) => note.status.includes(searchStatus))
+              .filter((note) => note.subject.includes(paramSubject))
+              .filter((note) => note.text.includes(searchText))}
+            handleAddNote={addNote}
+            handleDeleteNote={deleteNote}
+            handleSearch={setSearchText}
+            handleStatusChange={updateNoteStatus}
+            searchStatusChange={handleSearchStatusChange}
+          />
+        </div>
+      </div>
     </Container>
   );
 }

@@ -42,8 +42,8 @@ export default function AddNote({ handleAddNote }) {
         </select>
     </div>  
       <textarea
-        rows="8"
-        cols="30"
+        rows="6"
+        cols="16"
         placeholder="Type to add a note..."
         value={noteText}
         onChange={handleChange}
