@@ -1,19 +1,35 @@
 import AddNote from "./AddNote";
 import Note from "./Note";
-import classes from "./notes.module.css";
 import SearchNotes from "./SearchNotes";
+import { Container, Row, Col } from "react-bootstrap";
 
-export default function NotesList({ notes, handleAddNote, handleDeleteNote, handleSearch, handleStatusChange, searchStatusChange }) {
-     
+export default function NotesList({
+  notes,
+  handleAddNote,
+  handleDeleteNote,
+  handleSearch,
+  handleStatusChange,
+  searchStatusChange,
+}) {
   return (
-    <div className={classes.notescontainer}>
-      <SearchNotes handleSearch={handleSearch} searchStatusChange={searchStatusChange}/>
-      <div className={classes.noteslist}>
+    <Container>
+      <SearchNotes
+        handleSearch={handleSearch}
+        searchStatusChange={searchStatusChange}
+      />
+      <Row>
         {notes.map((note) => (
-          <Note key={note.id} note={note} handleDeleteNote={handleDeleteNote} handleStatusChange={handleStatusChange}/>
+          <Note
+            key={note.id}
+            note={note}
+            handleDeleteNote={handleDeleteNote}
+            handleStatusChange={handleStatusChange}
+          />
         ))}
-        <AddNote handleAddNote={handleAddNote} />
-      </div>
-    </div>
+        <Col>
+          <AddNote handleAddNote={handleAddNote} />
+        </Col>
+      </Row>
+    </Container>
   );
 }
