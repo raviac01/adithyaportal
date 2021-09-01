@@ -60,11 +60,11 @@ export default function NotesHome({ paramSubject = "" }) {
 
   return (
     <Container fluid>
-      <div class="row">
-        <div class="col-2">
+      <div className="row">
+        <div className="col-2">
           <Sidebar />
         </div>
-        <div class="col-10">
+        <div className="col-10">
           <NotesList
             notes={notes
               .filter((note) => note.status.includes(searchStatus))
