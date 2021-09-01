@@ -1,32 +1,54 @@
-import { Card } from 'react-bootstrap';
-import Link from 'next/link'
+import { MdDeleteForever } from "react-icons/md";
+import { Card, Button } from "react-bootstrap";
+import { useState } from "react";
+import PostItemModal from "./PostItemModal";
+import classes from "components/notes/notes.module.css";
 
-const CardItem = ({subject, subtopic, text, url}) => {
-  console.log(subtopic)
+const CardItem = ({ uid, subject, subtopic, text, url, handleDeletePost }) => {
+  const [lgShow, setLgShow] = useState(false);
+  function handleDeleteClick() {
+    handleDeletePost(uid);
+  }
   return (
     <Card className={`fj-card`}>
       <div className="card-body-wrapper">
-        <Card.Header
-          className="d-flex flex-row">
+        <Card.Header className="d-flex flex-row">
           <div>
             <Card.Title className="font-weight-bold mb-1">{subject}</Card.Title>
           </div>
+          <MdDeleteForever
+            onClick={handleDeleteClick}
+            className={classes.deleteicon}
+            size="1.3em"
+          />
         </Card.Header>
         <div className="view overlay">
-         <img src={url} alt='An image showing Adithya' width={250} height={250} />
+          <img
+            src={url}
+            alt="An image showing Adithya"
+            width={250}
+            height={250}
+          />
         </div>
         <Card.Body>
           <Card.Title className="card-main-title">{subtopic}</Card.Title>
           <Card.Text>{text}</Card.Text>
         </Card.Body>
       </div>
-      <Link href={`/blogs/${subtopic}`} >
-          <a className="card-button">
-            Read More
-        </a>
-      </Link>
+
+      <PostItemModal
+        subject={subject}
+        subtopic={subtopic}
+        text={text}
+        url={url}
+        show={lgShow}
+        setShowState={setLgShow}
+      />
+      <Button className="card-button" onClick={() => setLgShow(true)}>
+        Read More
+      </Button>
     </Card>
-  )
-}
+  );
+};
 
 export default CardItem;

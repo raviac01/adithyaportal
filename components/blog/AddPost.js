@@ -46,9 +46,7 @@ export default function AddPost({newPostAdded}) {
 
   function handleUpload() {
 
-
     const ref1 = ref(storage, `images/${image.name}`);
-    //const task = storage.ref(`images/${image.name}`).put(image)
     uploadBytes(ref1, image).then((snapshot) => { console.log(snapshot)
     
         getDownloadURL(ref(storage, `images/${image.name}`))
@@ -59,11 +57,11 @@ export default function AddPost({newPostAdded}) {
                 subject: subject,
                 subtopic: subtopic,
                 text: noteText,
-                url: url
+                url: url,
+                filename: image.name
               }
-            console.log('url11 is ', url)
+            
             if(noteText) {
-                console.log('saving')
                 savePostDB(newPost).then((result) => {
                     newPostAdded(newPost)
                 } );

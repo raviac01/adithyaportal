@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, runTransaction } from 'firebase/firestore/lite';
-import { getStorage, ref, getDownloadURL } from "firebase/storage"
+import { getFirestore, collection,getDoc, getDocs, doc, setDoc, deleteDoc, runTransaction } from 'firebase/firestore/lite';
+import { getStorage, ref, getDownloadURL, deleteObject } from "firebase/storage"
 
 const config = {
   apiKey: "AIzaSyC5vtujRiTT533u_sh93eBq7IiYnP9w88A",
@@ -73,4 +73,27 @@ const getPostsDB =  async () => {
    return docsData
 }
 
-export { saveNoteDB, getNotesDB, deleteNoteDB, updateNoteDB, storage, ref, getDownloadURL, savePostDB, getPostsDB}
+const deletePostDB = async (uid) => {
+
+  const docRef = doc(db, "posts", uid);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    
+    const imgRef = ref(storage, `images/${docSnap.data().filename}`)
+
+    await deleteDoc(docRef)
+
+    deleteObject(imgRef).then(() => {
+      // File deleted successfully
+      console.log('file deleted!')
+    }).catch((error) => {
+      // Uh-oh, an error occurred!
+    });
+
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
+
+export { saveNoteDB, getNotesDB, deleteNoteDB, updateNoteDB, storage, ref, getDownloadURL, savePostDB, getPostsDB, deletePostDB}
