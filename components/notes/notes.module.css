@@ -66,8 +66,10 @@
   background-color: lightgray;
   border-radius: 10px;
   padding: 5px;
-  margin-bottom: 1.5em;
   justify-content: space-between;
+  width: 50rem;
+  margin: auto;
+  margin-bottom: 1.5em;
 }
 
 .search input {
