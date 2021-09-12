@@ -1,6 +1,9 @@
 import { Navbar, Nav } from "react-bootstrap";
 
 export default function BlogNavbar() {
+  //   <Nav.Link className="fj-navbar-item fj-navbar-link" href="/youtube">
+  //   Music
+  // </Nav.Link>
   return (
     <Navbar
       className="fj-navbar fj-nav-base"
@@ -24,9 +27,6 @@ export default function BlogNavbar() {
           </Nav.Link>
           <Nav.Link className="fj-navbar-item fj-navbar-link" href="/blog">
             Blog
-          </Nav.Link>
-          <Nav.Link className="fj-navbar-item fj-navbar-link" href="/youtube">
-            Music
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
