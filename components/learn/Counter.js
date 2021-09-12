@@ -13,7 +13,7 @@ export default function Counter() {
   //console.log("counter is ", counter);
   const login = useSelector((state) => state.isLoggedIn);
   //console.log("login is ", login);
-  co nst dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className="App">
