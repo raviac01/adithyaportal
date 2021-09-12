@@ -15,11 +15,10 @@
 
   .sidebar {
     height: 100%;
-    overflow-y: scroll;
     background: var(--clr-white);
     display: grid;
     grid-template-rows: auto 1fr auto;
-    row-gap: 1rem;
+    row-gap: 2rem;
     box-shadow: var(--clr-red-dark);
     transition: var(--transition);
     transform: translate(0%);

@@ -64,6 +64,7 @@ export default function NotesHome({ paramSubject = "" }) {
         <div className="col-2">
           <Sidebar />
         </div>
+
         <div className="col-10">
           <NotesList
             notes={notes
