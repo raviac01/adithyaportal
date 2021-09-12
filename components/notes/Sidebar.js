@@ -1,39 +1,43 @@
 import React from "react";
+import { sidebarlinks } from "data/data";
+import classes from "./sidebar.module.css";
 import Link from "next/link";
 import styled from "styled-components";
 import { nanoid } from "nanoid";
-import { useDispatch } from "react-redux";
 
-const Sidebar = ({ sidebarlinks }) => {
-  const dispatch = useDispatch();
-
-  const songChosen = (text) => {
-    dispatch({
-      type: "SET_SEARCH_SONG",
-      payload: { searchSongTitle: text },
-    });
-  };
-
+const Sidebar = () => {
   return (
     <StyledSidebar>
       <StyledList key={nanoid()}>
         {sidebarlinks.map((link) => {
           const { id, url, text } = link;
           return (
-            <a
-              key={nanoid()}
-              onClick={() => {
-                songChosen(text);
-              }}
-            >
-              {text}
-            </a>
+            <span key={id}>
+              <Link href={url}>{text}</Link>
+            </span>
           );
         })}
       </StyledList>
     </StyledSidebar>
   );
 };
+
+// const Sidebar = () => {
+//   return (
+//     <div className={classes.sidebar}>
+//       <ul className={classes.links}>
+//         {sidebarlinks.map((link) => {
+//           const { id, url, text } = link;
+//           return (
+//             <li key={id}>
+//               <Link href={url}>{text}</Link>
+//             </li>
+//           );
+//         })}
+//       </ul>
+//     </div>
+//   );
+// };
 
 export default Sidebar;
 

@@ -1,5 +1,5 @@
 import NotesList from "components/notes/NotesList";
-import Sidebar from "components/ui/Sidebar";
+import Sidebar from "./Sidebar";
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import {
@@ -61,11 +61,11 @@ export default function NotesHome({ paramSubject = "" }) {
   return (
     <Container fluid>
       <div className="row">
-        <div className="col-2">
+        <div className="col-1">
           <Sidebar />
         </div>
 
-        <div className="col-10">
+        <div className="col-11">
           <NotesList
             notes={notes
               .filter((note) => note.status.includes(searchStatus))
