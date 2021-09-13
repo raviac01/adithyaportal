@@ -17,7 +17,11 @@ export default function playlistReducer(state = initState, action) {
       return { ...state, isLoading: true };
 
     case "SET_SEARCH_SONG":
-      return { ...state, searchSongTitle: action.payload.searchSongTitle };
+      return {
+        ...state,
+        searchSongTitle: action.payload.searchSongTitle,
+        currentPage: action.payload.currentPage,
+      };
 
     case "GET_SEARCH_SONG":
       return state;

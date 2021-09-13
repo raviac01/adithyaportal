@@ -11,7 +11,7 @@ export default function SearchSongs() {
   const searchEvent = (event) => {
     dispatch({
       type: "SET_SEARCH_SONG",
-      payload: { searchSongTitle: event.target.value },
+      payload: { searchSongTitle: event.target.value, currentPage: 1 },
     });
   };
 
@@ -36,6 +36,7 @@ const StyledSearch = styled.div`
   padding: 5px;
   width: 50rem;
   margin: auto;
+  margin-top: 0px;
   justify-content: space-between;
 
   input {

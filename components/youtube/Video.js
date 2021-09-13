@@ -9,7 +9,7 @@ export default function Video({ item }) {
 
   return (
     <StyledVideo key={nanoid()}>
-      <h3>{title}</h3>
+      <h3>{title.slice(0, 40)}</h3>
       <ReactPlayer
         width="300px"
         height="240px"

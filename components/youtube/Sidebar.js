@@ -10,7 +10,7 @@ const Sidebar = ({ sidebarlinks }) => {
   const songChosen = (text) => {
     dispatch({
       type: "SET_SEARCH_SONG",
-      payload: { searchSongTitle: text },
+      payload: { searchSongTitle: text, currentPage: 1 },
     });
   };
 
@@ -26,7 +26,7 @@ const Sidebar = ({ sidebarlinks }) => {
                 songChosen(text);
               }}
             >
-              {text}
+              {text.slice(0, 15)}
             </a>
           );
         })}
@@ -42,7 +42,8 @@ const StyledList = styled.div`
     display: flex;
     align-items: center;
     font-size: 1.25rem;
-    padding: 1rem 1rem;
+    padding: 0.25rem 0.5rem;
+    margin: auto;
     color: grey;
     transition: all 0.3s linear;
   }
@@ -54,8 +55,8 @@ const StyledList = styled.div`
 
 const StyledSidebar = styled.div`
   word-wrap: break-word;
-  padding-top: 5rem;
-  height: 100vh;
+  padding-top: 0.5rem;
+  height: 75vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   row-gap: 2rem;
