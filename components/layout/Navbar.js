@@ -28,6 +28,9 @@ export default function BlogNavbar() {
           <Nav.Link className="fj-navbar-item fj-navbar-link" href="/youtube">
             Music
           </Nav.Link>
+          <Nav.Link className="fj-navbar-item fj-navbar-link" href="/learn">
+            Learn
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

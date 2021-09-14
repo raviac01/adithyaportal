@@ -1,17 +1,16 @@
 import React from "react";
-import Link from "next/link";
 import styled from "styled-components";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
+import { setSearchSong } from "components/redux/PlaylistSlice";
+import { setCurrentPage } from "components/redux/PaginationSlice";
 
 const Sidebar = ({ sidebarlinks }) => {
   const dispatch = useDispatch();
 
   const songChosen = (text) => {
-    dispatch({
-      type: "SET_SEARCH_SONG",
-      payload: { searchSongTitle: text, currentPage: 1 },
-    });
+    dispatch(setCurrentPage(1));
+    dispatch(setSearchSong(text));
   };
 
   return (

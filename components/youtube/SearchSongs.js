@@ -1,18 +1,25 @@
 import { MdSearch } from "react-icons/md";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import { setSearchSong } from "components/redux/PlaylistSlice";
+import { setCurrentPage } from "components/redux/PaginationSlice";
 
 export default function SearchSongs() {
   const dispatch = useDispatch();
-  const { searchSongTitle } = useSelector((state) => {
-    return state.PLAYLIST1;
-  });
+  const state = useSelector((state) => state);
+  const { searchSongTitle } = state.PLAYLIST1;
+  const currentPage = state.PAGINATION.currentPage;
 
   const searchEvent = (event) => {
-    dispatch({
-      type: "SET_SEARCH_SONG",
-      payload: { searchSongTitle: event.target.value, currentPage: 1 },
-    });
+    // dispatch({
+    //   type: "SET_SEARCH_SONG",
+    //   payload: { searchSongTitle: event.target.value, currentPage: 1 },
+    // });
+    if (currentPage != 1) {
+      console.log("dispatch to 1 from", currentPage);
+      dispatch(setCurrentPage(1));
+    }
+    dispatch(setSearchSong(event.target.value));
   };
 
   return (

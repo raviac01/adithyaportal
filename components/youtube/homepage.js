@@ -13,7 +13,7 @@ export default function HomePage() {
   });
   const { itemslist, isLoading, searchSongTitle } = state.PLAYLIST1;
   const { currentPage, postsPerPage } = state.PAGINATION;
-  console.log("current page is", currentPage);
+
   const sidebarlinks = itemslist.map((item) => {
     const { id, snippet = {} } = item;
     const { title, thumbnails = {}, resourceId } = snippet;
